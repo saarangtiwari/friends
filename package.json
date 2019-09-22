@@ -1,0 +1,38 @@
+{
+  "name": "friends",
+  "version": "1.0.0",
+  "description": "CRUD , User , authentication, friends.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saarang1995/friends.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "Mongodb",
+    "JWT",
+    "passport"
+  ],
+  "author": "Saarang Tiwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saarang1995/friends/issues"
+  },
+  "homepage": "https://github.com/saarang1995/friends#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "validator": "^11.1.0"
+  }
+}

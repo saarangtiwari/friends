@@ -1,0 +1,61 @@
+Arguments: 
+  /Users/saarangtiwari/.nvm/versions/node/v10.16.3/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add mongoose express jsonwebtoken bycrptjs dotenv validator body-parser
+
+PATH: 
+  /Users/saarangtiwari/.nvm/versions/node/v10.16.3/bin:/Users/saarangtiwari/.rbenv/shims:/usr/local/opt/node@10/bin:/Users/saarangtiwari/.rvm/gems/ruby-2.5.0/bin:/Users/saarangtiwari/.rvm/gems/ruby-2.5.0@global/bin:/Users/saarangtiwari/.rvm/rubies/ruby-2.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home:/Users/saarangtiwari/Library/Android/sdk:/Users/saarangtiwari/sdk/flutter/bin:~/Library/Android/sdk/platform-tools:/Users/saarangtiwari/.nvm/versions/node/v10.16.3/bin:/Users/saarangtiwari/.rbenv/shims:/usr/local/opt/node@10/bin:/Users/saarangtiwari/.rvm/gems/ruby-2.5.0/bin:/Users/saarangtiwari/.rvm/gems/ruby-2.5.0@global/bin:/Users/saarangtiwari/.rvm/rubies/ruby-2.5.0/bin:/Users/saarangtiwari/.rvm/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/bycrptjs: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:66830:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:140464:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141436:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "friends",
+    "version": "1.0.0",
+    "description": "CRUD , User , authentication, friends.",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/saarang1995/friends.git"
+    },
+    "keywords": [
+      "Nodejs",
+      "Express",
+      "Mongodb",
+      "JWT",
+      "passport"
+    ],
+    "author": "Saarang Tiwari",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/saarang1995/friends/issues"
+    },
+    "homepage": "https://github.com/saarang1995/friends#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
