@@ -13,7 +13,7 @@ const UserValidation = {
     userData.password = !isEmpty(userData.password) ? userData.password : '';
     userData.birthdayTimeStamp = !isEmpty(userData.birthdayTimeStamp) ? userData.birthdayTimeStamp : '';
 
-    if (!Validator.isLength(userData.firstName, { min: 10, max: 120 })) {
+    if (!Validator.isLength(userData.firstName, { min: 5, max: 15 })) {
       errors.firstName = 'firstName must be between 10 and 120 characters.';
     }
 
@@ -21,7 +21,7 @@ const UserValidation = {
       errors.firstName = 'firstName is required.';
     }
 
-    if (!Validator.isLength(userData.lastName, { min: 10, max: 120 })) {
+    if (!Validator.isLength(userData.lastName, { min: 5, max: 15 })) {
       errors.lastName = 'lastName must be between 10 and 120 characters.';
     }
 
@@ -42,14 +42,25 @@ const UserValidation = {
     }
 
     if (Validator.isEmpty(userData.birthdayTimeStamp)) {
-      errors.birthdayTimeStamp = 'Password is required';
+      errors.birthdayTimeStamp = 'birthdayTimeStamp is required';
     }
 
- 
-    return {
-      errors,
-      isValid: isEmpty(errors)
-    };
+    if (Validator.isEmpty(userData.phoneNumber)) {
+      errors.phoneNumber = 'Phone Number is required';
+    }
+
+
+    if (isEmpty(errors)) {
+      next();
+    }
+    else {
+      res.status(404).json({ message: errors });
+    }
+
+    // return {
+    //   errors,
+    //   isValid: isEmpty(errors)
+    // };
   }
 }
 

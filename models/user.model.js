@@ -36,15 +36,22 @@ const User = mongoose.model('users', UserSchema);
 const UserModel = {
   addNewUser: async user => {
     const existingUser = await User.findOne({ email: user.email });
-    if (existingUser) return false;
+    if (existingUser) return { message: "User's email ID already exists" };
     const hashedPassword = await Cryptic.encrypt(user.password);
     user.password = hashedPassword;
     const newUser = new User(user);
     try {
-      return newUser.save();
+      newUser.save();
+      return {
+        message: "User Created",
+        data: newUser
+      }
     }
     catch (error) {
-      return error;
+      return {
+        message: "Error occurred while creating New User",
+        error
+      };
     }
   },
   getAllUsers: async () => {
