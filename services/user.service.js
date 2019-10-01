@@ -2,8 +2,7 @@ const UserModel = require('../models/user.model');
 
 const UserService = {
     addNewUser: async user => {
-    const response = await UserModel.addNewUser(user);
-    return response;
+    return await UserModel.addNewUser(user);;
 },
 getAllUsers: () => {
     const allUsers = UserModel.getAllUsers();
