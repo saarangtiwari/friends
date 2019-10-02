@@ -54,9 +54,26 @@ const UserModel = {
       };
     }
   },
-  getAllUsers: async () => {
-    return await User.find({});
+
+  getAllUsers: async () => await User.find({}),
+
+  findOneUser: async userData => await User.find(userData),
+
+  login: async (user) => {
+    const email = user.email;
+    const password = user.password;
+
+    // find previous data of the user:
+    const userData = await User.findOne({ email });
+    if (!userData) return { message: "User not found" };
+    const isMatch = Cryptic.compare(password, userData.password);
+
+    // finding user data from db:
+    const userObjectFromDB = this.findOneUser({ email, password });
+    console.log(userObjectFromDB);
+    // const payload =
   }
+
 }
 
 module.exports = UserModel;
