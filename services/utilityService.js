@@ -18,7 +18,12 @@ const UtilityService = {
         }
       );
     })
+  },
 
+  getFormattedErrorMessage: ( status, message ) => {
+    return {
+      status, message
+    }
   }
 };
 

@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
     console.log('Error Message : ' + err.stack);
     res.status(err.status || 500).send({
         success: "false",
-        msg: err.message,
-        data: []
+        message: err.message,
+        status: err.status
     });
 });

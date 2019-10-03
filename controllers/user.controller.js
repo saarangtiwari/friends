@@ -1,11 +1,12 @@
 const UserService = require('../services/user.service');
+const UtilityService = require('../services/utilityService');
 
 const UserController = {
 
   addUser: async (req, res, next) => {
     const response = await UserService.addNewUser(req.body);
     if (response.error) {
-      res.status(400).json(response);
+      next(UtilityService.getFormattedErrorMessage(404, response.error));
     }
     else {
       res.status(200).json(response);
@@ -21,9 +22,7 @@ const UserController = {
   login: async (req, res, next) => {
     const token = await UserService.login(req.body);
     if (!token) {
-      res.status(400).json({
-        message: "User Not found"
-      });
+      next(UtilityService.getFormattedErrorMessage(404, "User Not Found"));
     }
     else {
       res.status(200).json({
