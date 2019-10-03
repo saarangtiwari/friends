@@ -80,7 +80,7 @@ const UserModel = {
     return token;
   },
 
-  getUserAboveAge: async age => await User.find({ age: { $gt: age } })
+  getUserAboveAge: async age => await User.find({ age: { $gt: age } }).sort({birthdayTimeaStamp : -1})
 }
 
 module.exports = UserModel;
