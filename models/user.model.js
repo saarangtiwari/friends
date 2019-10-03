@@ -73,7 +73,6 @@ const UserModel = {
 
     // finding user data from db:
     const token = await UtilityService.generateToken({ firstName: userData.firstName, lastName: userData.lastName, email: userData.email, phoneNumber: userData.phoneNumber });
-    console.log(token)
     return token;
   }
 

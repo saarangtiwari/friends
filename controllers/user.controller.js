@@ -20,7 +20,6 @@ const UserController = {
 
   login: async (req, res, next) => {
     const token = await UserService.login(req.body);
-    console.log(token);
     if (!token) {
       res.status(400).json({
         message: "User Not found"
@@ -29,8 +28,7 @@ const UserController = {
     else {
       res.status(200).json({
         token
-      }
-      )
+      });
     }
   }
 
