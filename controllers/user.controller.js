@@ -29,6 +29,12 @@ const UserController = {
         token
       });
     }
+  },
+
+  getUserAboveAge: async (req, res, next) => {
+    res.status(200).json({
+      users: await UserService.getUserAboveAge(req.body.age)
+    });
   }
 
 };

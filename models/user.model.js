@@ -25,6 +25,10 @@ const UserSchema = new Schema({
     type: Date,
     required: true
   },
+  age: {
+    type: Number,
+    required: true
+  },
   password: {
     type: String,
     required: true
@@ -60,7 +64,7 @@ const UserModel = {
 
   findOneUser: async userData => await User.findOne(userData),
 
-  login: async (user) => {
+  login: async user => {
     const email = user.email;
     const password = user.password;
 
@@ -74,8 +78,9 @@ const UserModel = {
     // finding user data from db:
     const token = await UtilityService.generateToken({ firstName: userData.firstName, lastName: userData.lastName, email: userData.email, phoneNumber: userData.phoneNumber });
     return token;
-  }
+  },
 
+  getUserAboveAge: async age => await User.find({ age: { $gt: age } })
 }
 
 module.exports = UserModel;
