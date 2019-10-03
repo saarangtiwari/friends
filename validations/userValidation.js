@@ -45,6 +45,10 @@ const UserValidation = {
       errors.birthdayTimeStamp = 'birthdayTimeStamp is required';
     }
 
+    if (!userData.age) {
+      errors.age = 'age is required';
+    }
+
     if (Validator.isEmpty(userData.phoneNumber)) {
       errors.phoneNumber = 'Phone Number is required';
     }
