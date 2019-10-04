@@ -7,5 +7,5 @@ router.get('/test', (req, res) => res.status(200).json({ message: 'User route te
 router.get('/all_users', UserController.getAllUser);
 router.post('/add', UserValidation.addNewUser, UserController.addUser);
 router.post('/login', UserController.login);
-router.post('/get_user_above_age', UserController.getUserAboveAge)
+router.get('/get_users_query', UserController.getUserAboveAge)
 module.exports = router;

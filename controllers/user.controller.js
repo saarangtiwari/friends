@@ -33,10 +33,9 @@ const UserController = {
 
   getUserAboveAge: async (req, res, next) => {
     res.status(200).json({
-      users: await UserService.getUserAboveAge(req.body.age)
+      users: await UserService.getUserAboveAge(req.query.age)
     });
   }
-
 };
 
 module.exports = UserController;

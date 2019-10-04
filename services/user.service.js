@@ -6,9 +6,11 @@ const UserService = {
     addNewUser: async user => await UserModel.addNewUser(user),
     getAllUsers: async () => await UserModel.getAllUsers(),
     login: async user => {
+        
         // await UserModel.login(user)
         const email = user.email;
         const password = user.password;
+
         // find previous data of the user:
         const userData = await UserModel.findOneUser({ email });
         if (!userData) return { message: "User not found" };
