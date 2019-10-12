@@ -35,7 +35,7 @@ const UserSchema = new Schema({
 });
 
 
-const User = mongoose.model('users', UserSchema);
+const User = mongoose.model('user', UserSchema);
 
 const UserModel = {
   addNewUser: async user => {
@@ -63,7 +63,7 @@ const UserModel = {
 
   findOneUser: async userData => await User.findOne(userData),
 
-  getUserAboveAge: async age => await User.find({ age: { $gt: age } }).sort({birthdayTimeStamp : -1})
+  getUserAboveAge: async age => await User.find({ age: { $gt: age } }).sort({ birthdayTimeStamp: -1 })
 }
 
 module.exports = UserModel;
